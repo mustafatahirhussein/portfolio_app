@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/Resources/portfolio_theme.dart';
 import 'package:my_portfolio/portfolio.dart';
 
 void main() {
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: true,
+      theme: PortfolioTheme.portfolioTheme(),
       home: Portfolio(),
     );
   }
