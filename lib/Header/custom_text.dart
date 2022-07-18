@@ -9,9 +9,14 @@ class CustomText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Text(string, style: style,maxLines: 1),
+    return InkWell(
+      onTap: () {
+
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(string, style: style,maxLines: 1),
+      ),
     );
   }
 }

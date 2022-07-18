@@ -6,7 +6,7 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle style = TextStyle(
+    TextStyle style = const TextStyle(
       color: Color(0xffffffff),
       fontWeight: FontWeight.bold,
       fontSize: 24,

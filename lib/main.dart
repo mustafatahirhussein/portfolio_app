@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/Resources/portfolio_theme.dart';
-import 'package:my_portfolio/portfolio.dart';
+import 'package:my_portfolio/Screens/portfolio.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
