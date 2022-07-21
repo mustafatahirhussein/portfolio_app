@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_portfolio/Footrer/footer.dart';
 import 'package:my_portfolio/Header/custom_drawer.dart';
 import 'package:my_portfolio/Header/custom_text.dart';
 import 'package:my_portfolio/Screens/about_me.dart';
 import 'package:my_portfolio/Screens/projects.dart';
 import 'package:my_portfolio/Screens/work_history.dart';
+import 'package:my_portfolio/controller/portfolio_controller.dart';
 
 class Portfolio extends StatelessWidget {
   Portfolio({Key? key}) : super(key: key);
 
   final sKey = GlobalKey<ScaffoldState>();
-  final _controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +57,6 @@ class Portfolio extends StatelessWidget {
   Widget buildHeaderMobile(BuildContext context, TextStyle style) {
     return ListView(
       physics: const ClampingScrollPhysics(),
-      controller: _controller,
       shrinkWrap: true,
       children: [
         Align(
@@ -80,7 +80,6 @@ class Portfolio extends StatelessWidget {
         const SizedBox(height: 50),
         const Projects(),
         const SizedBox(height: 100),
-
         const WorkHistory(),
       ],
     );
@@ -94,12 +93,21 @@ class Portfolio extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            const Icon(
-              Icons.dark_mode_rounded,
-              size: 150,
-              color: Color(0xffffffff),
+            GetBuilder<PortfolioController>(
+              builder: (c) {
+                return GestureDetector(
+                  child:
+                      Image.asset("assets/name.png", fit: BoxFit.cover, height: 80),
+                  onTap: () {
+                    print("data");
+                    final double end = c.controller.position.maxScrollExtent;
+                    c.scrollTo(end);
+                  },
+                );
+              }
             ),
             // Spacer(),
+
             Expanded(
               child: Wrap(
                 alignment: WrapAlignment.end,
@@ -115,14 +123,11 @@ class Portfolio extends StatelessWidget {
             ),
           ],
         ),
-
-
         const SizedBox(height: 20),
         const AboutMe(),
         const SizedBox(height: 50),
         const Projects(),
         const SizedBox(height: 50),
-
         const WorkHistory(),
       ],
     );

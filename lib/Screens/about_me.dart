@@ -13,11 +13,14 @@ class AboutMe extends StatelessWidget {
           child: Container(
             height: 200,
             width: 200,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.green,
+              color: Theme.of(context).primaryColor,
+              image: const DecorationImage(
+                image: AssetImage("pic.png"),
+                fit: BoxFit.cover,
+              ),
             ),
-            child: const Text("Add image here"),
           ),
         ),
 
@@ -37,11 +40,14 @@ class AboutMe extends StatelessWidget {
           child: Container(
             height: 160,
             width: 160,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.green,
+              color: Theme.of(context).primaryColor,
+              image: const DecorationImage(
+                image: AssetImage("pic.png"),
+                fit: BoxFit.cover,
+              ),
             ),
-            child: const Text("Add image here"),
           ),
         ),
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_portfolio/Resources/portfolio_theme.dart';
 import 'package:my_portfolio/Screens/portfolio.dart';
+import 'package:my_portfolio/controller/bindings.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,7 +14,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      initialBinding: InitialBindings(),
       debugShowCheckedModeBanner: true,
       theme: PortfolioTheme.portfolioTheme(),
       home: Portfolio(),
